@@ -9,6 +9,20 @@ if ($mysqli->connect_errno) {
 
 $query = "DELETE FROM Posts WHERE content = '$CONTENT'";
 
+if ($result = $mysqli->query($query)) {
+
+    /* fetch associative array */
+    while ($row = $result->fetch_assoc()) {
+      //if($row["author_id"] = $USERNAME)
+      //{
+
+ echo("$row["post_id"]");
+    //}
+}
+    /* free result set */
+    $result->free();
+}
+
 /* close connection */
 $mysqli->close();
 
